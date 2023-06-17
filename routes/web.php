@@ -62,3 +62,48 @@ Route::post('resto/pizza/update/{id}',
 Route::post('resto/pizza/destroy/{id}',
 [App\Http\Controllers\resto\PizzaController::class,
 'destroy'])->middleware('can:isResto');
+Route::get('konsumen/alamatkirim',
+[App\Http\Controllers\konsumen\AlamatKirimController::class, 'index'])
+->middleware('can:isKonsumen');
+Route::get('konsumen/alamatkirim/create',
+[App\Http\Controllers\konsumen\AlamatKirimController::class, 'create'])
+->middleware('can:isKonsumen');
+Route::post('konsumen/alamatkirim/store',
+[App\Http\Controllers\konsumen\AlamatKirimController::class, 'store'])
+->middleware('can:isKonsumen');
+Route::get('konsumen/alamatkirim/edit/{id}',
+[App\Http\Controllers\konsumen\AlamatKirimController::class, 'edit'])
+->middleware('can:isKonsumen');
+Route::post('konsumen/alamatkirim/update/{id}',
+[App\Http\Controllers\konsumen\AlamatKirimController::class, 'update'])
+->middleware('can:isKonsumen');
+Route::post('konsumen/alamatkirim/destroy/{id}',
+[App\Http\Controllers\konsumen\AlamatKirimController::class, 'destroy'])
+->middleware('can:isKonsumen');
+Route::post('konsumen/alamatkirim/default/{id}',
+[App\Http\Controllers\konsumen\AlamatKirimController::class, 'default'])
+->middleware('can:isKonsumen');
+Route::get('konsumen/order',
+[App\Http\Controllers\konsumen\JualController::class, 'order'])
+->middleware('can:isKonsumen');
+Route::post('konsumen/addtocart/{id}',
+[App\Http\Controllers\konsumen\JualController::class, 'addtocart'])
+->middleware('can:isKonsumen');
+Route::get('konsumen/cart',
+[App\Http\Controllers\konsumen\JualController::class, 'getcart'])
+->middleware('can:isKonsumen');
+Route::post('konsumen/cart',
+[App\Http\Controllers\konsumen\JualController::class, 'postcart'])
+->middleware('can:isKonsumen');
+Route::get('konsumen/checkout',
+[App\Http\Controllers\konsumen\JualController::class, 'getcheckout'])
+->middleware('can:isKonsumen');
+Route::post('konsumen/checkout',
+[App\Http\Controllers\konsumen\JualController::class, 'postcheckout'])
+->middleware('can:isKonsumen');
+Route::post('konsumen/cancel/{id}',
+[App\Http\Controllers\konsumen\JualController::class, 'postcancel'])
+->middleware('can:isKonsumen');
+Route::get('konsumen/track/{id}',
+[App\Http\Controllers\konsumen\JualController::class, 'gettrack'])
+->middleware('can:isKonsumen');

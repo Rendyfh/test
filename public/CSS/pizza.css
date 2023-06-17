@@ -1,0 +1,15 @@
+h1{
+    color: #C8100B;
+    }
+    .pizza-card{
+    border-radius: 10px;
+    height:100px;
+    line-height:100px;
+    padding: 3px 3px;
+    background-clip: content-box;
+    }
+    .pizza-primary{
+    color: #666D3B;
+    background-color: #ECBC84;
+    font-size: medium;
+    }
