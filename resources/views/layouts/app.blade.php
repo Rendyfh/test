@@ -31,7 +31,12 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
-
+                        @can('isResto')
+                        <li class="nav-item"><a class="nav-link"
+                        href="{{ url('/resto/pizza') }}">Pizza</a></li>
+                        <li class="nav-item"><a class="nav-link"
+                        href="{{ url('/resto/user') }}">User</a></li>
+                        @endcan
                     </ul>
 
                     <!-- Right Side Of Navbar -->
